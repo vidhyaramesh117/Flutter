@@ -53,13 +53,27 @@ class MyHomePageState extends State<MyHomePage>
               (
                 color: Colors.blue,
               ),
-              child: Text
-              (
-                "Extreme Psycho",
-                style: TextStyle
+              child: UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color: Colors.blue),
+                accountName: Text
                 (
-                  color: Colors.black,
-                  fontSize: 30,
+                  "Extreme Psycho",
+                  style: TextStyle(fontSize: 20),
+                ), 
+                accountEmail: Text("9072381972"),
+                currentAccountPictureSize: Size.square(50),
+                currentAccountPicture: CircleAvatar
+                (
+                  backgroundColor: Color.fromARGB(255, 45, 175, 226),
+                  child: Text
+                  (
+                    "EP",
+                    style: TextStyle
+                    (
+                      fontSize: 30.0,
+                      color: Colors.black
+                    ),
+                  ),
                 ),
               ),
             ),
