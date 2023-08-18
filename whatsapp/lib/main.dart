@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget
 class MyHomePage extends StatefulWidget 
 {
   const MyHomePage({super.key});
-
+  
 
   @override
   State<MyHomePage> createState() => MyHomePageState();
@@ -29,18 +29,39 @@ class MyHomePage extends StatefulWidget
 
 class MyHomePageState extends State<MyHomePage> 
 {
+  int count = 0;
 
   @override
   Widget build(BuildContext context) 
   {
    
-    return Scaffold(
+    return Scaffold
+    (
+
 //appbar      
       appBar: AppBar
       (
         title: const Text("WHATSAPP"),
       ),
 
+//body
+      body: const Center
+      (
+        
+      ),
+
+//floating action button
+      floatingActionButton: FloatingActionButton
+      (
+        onPressed: () => setState(() 
+        {
+          null;
+        }),
+        child: Icon(Icons.message),
+      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+
+//drawer
       drawer: Drawer
       (
         child: ListView
