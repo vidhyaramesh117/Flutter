@@ -56,7 +56,31 @@ class MyHomePageState extends State<MyHomePage>
 //body
       body: const Center
       (
-        
+
+        child: Text
+        (
+          "Whatsapp Body",
+          style: TextStyle
+          (
+            fontSize: 30,
+            color: Colors.blue,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            letterSpacing: 8,
+            wordSpacing: 15,
+            // backgroundColor: Color.fromARGB(255, 205, 255, 247),
+            shadows: 
+            [
+              Shadow
+              (
+                color: Colors.black,
+                offset: Offset(2,1),
+                blurRadius: 15,
+              )
+            ]
+          ),
+        ),
+
       ),
 
 //drawer
