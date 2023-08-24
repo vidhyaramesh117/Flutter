@@ -54,32 +54,76 @@ class MyHomePageState extends State<MyHomePage>
       ),
 
 //body
-      body: const Center
+      body:  Center
       (
 
-        child: Text
+//rich text
+        child: RichText
         (
-          "Whatsapp Body",
-          style: TextStyle
+          text: const TextSpan
           (
-            fontSize: 30,
-            color: Colors.blue,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            letterSpacing: 8,
-            wordSpacing: 15,
-            // backgroundColor: Color.fromARGB(255, 205, 255, 247),
-            shadows: 
+            style: TextStyle
+            (
+              color: Colors.grey,
+              fontSize: 15,
+            ),
+            children: <TextSpan>
             [
-              Shadow
+              TextSpan
               (
-                color: Colors.black,
-                offset: Offset(2,1),
-                blurRadius: 15,
-              )
+                text: "Hello",
+              ),
+              TextSpan
+              (
+                text: " from",
+              ),
+              TextSpan
+              (
+                text: "WHATSAPP",
+                style: TextStyle
+                (
+                  color: Colors.green,
+                  fontSize: 23,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ]
           ),
         ),
+//text        
+        // child: Text
+        // (
+        //   "Whatsapp Body",
+        //   style: TextStyle
+        //   (
+        //     fontSize: 30,
+        //     color: Colors.blue,
+        //     fontWeight: FontWeight.bold,
+        //     fontStyle: FontStyle.italic,
+        //     letterSpacing: 8,
+
+        //     wordSpacing: 15,
+        //     // backgroundColor: Color.fromARGB(255, 205, 255, 247),
+        //     shadows: 
+        //     [
+        //       Shadow
+        //       (
+        //         color: Colors.black,
+        //         offset: Offset(2,1),
+        //         blurRadius: 15,
+        //       )
+        //     ]
+        //   ),
+        // ),
+
+//image
+        // child: Column
+        // (
+        //   children: <Widget>
+        //   [
+        //     Image.asset('assets/images/wallpaper.jpg'),
+        //   ],
+        // ),
 
       ),
 
@@ -88,7 +132,7 @@ class MyHomePageState extends State<MyHomePage>
       (
         child: ListView
         (
-          children: <Widget>
+          children: <Widget> 
           [
             const DrawerHeader
             (
@@ -217,6 +261,10 @@ class MyHomePageState extends State<MyHomePage>
           null;
         }),
         child: Icon(Icons.message),
+        shape: RoundedRectangleBorder
+        (
+          borderRadius: BorderRadius.all(Radius.circular(15.0))
+        ),
         
       ),
 
