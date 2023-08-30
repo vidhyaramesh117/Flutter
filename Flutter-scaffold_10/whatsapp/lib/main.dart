@@ -67,7 +67,6 @@ class MyHomePageState extends State<MyHomePage>
           (
             top: 30,
             left: 30,
-
 //rich text
             child: RichText
           (
@@ -107,14 +106,18 @@ class MyHomePageState extends State<MyHomePage>
           (
             top: 70,
             left: 50,
-
 // image
             child: Column
             (
               children: <Widget>
               [
-                Image.asset('assets/images/wallpaper.jpg'),
-                
+                Image.asset
+                (
+                  'assets/images/wallpaper.jpg',
+                  height: 500,
+                  width: 300, 
+                ),
+               
               ],
             ),
 
@@ -124,7 +127,6 @@ class MyHomePageState extends State<MyHomePage>
           (
             bottom: 62,
             right: 64,
-
 //text
             child: Text
           (
@@ -154,9 +156,8 @@ class MyHomePageState extends State<MyHomePage>
           ]
         ),
         
-        // 
 
-        
+
       ),
 
 //drawer
