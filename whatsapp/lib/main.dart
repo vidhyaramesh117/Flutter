@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/pages.dart';
 
 void main() 
 {
@@ -57,104 +58,49 @@ class MyHomePageState extends State<MyHomePage>
       body:  Center
       (
         child: Stack
-        (  
-          fit: StackFit.passthrough,  
-          // overflow: Overflow.visible,  
-          children: <Widget>
-          [ 
- 
-          Positioned
-          (
-            top: 30,
-            left: 30,
-//rich text
-            child: RichText
-          (
-            text: const TextSpan
+        (
+          fit: StackFit.passthrough,
+          // overflow: Overflow.visible,
+          children: 
+          [
+            Positioned
             (
-              style: TextStyle
+              top: 40,
+              left: 150,
+//Navigator
+              child: Column
               (
-                color: Colors.grey,
-                fontSize: 15,
-              ),
-              children: <TextSpan>
-              [
-                TextSpan
-                (
-                  text: "Hello",
-                ),
-                TextSpan
-                (
-                  text: " from",
-                ),
-                TextSpan
-                (
-                  text: "WHATSAPP",
-                  style: TextStyle
+                children: 
+                [
+                  ElevatedButton
                   (
-                    color: Colors.green,
-                    fontSize: 23,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ]
-            ),
-          ),
-          ),
-          
-          Positioned
-          (
-            top: 70,
-            left: 50,
-// image
-            child: Column
-            (
-              children: <Widget>
-              [
-                Image.asset
-                (
-                  'assets/images/wallpaper.jpg',
-                  height: 500,
-                  width: 300, 
-                ),
-               
-              ],
-            ),
-
-          ),
-
-          const Positioned
-          (
-            bottom: 62,
-            right: 64,
-//text
-            child: Text
-          (
-            "Whatsapp",
-            style: TextStyle
-            (
-              fontSize: 30,
-              color: Colors.blue,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              letterSpacing: 8,
-
-              wordSpacing: 15,
-              // backgroundColor: Color.fromARGB(255, 205, 255, 247),
-              shadows: 
-              [
-                Shadow
-                (
-                  color: Colors.black,
-                  offset: Offset(2,1),
-                  blurRadius: 15,
-                )
-              ]
-            ),
-          ),
-          ),
-          ]
-        ),
+                    onPressed: () 
+                    {
+                      Navigator.push
+                      (
+                        context,
+                        MaterialPageRoute
+                        (
+                          builder: (context) => pages(),
+                        )
+                      );
+                    },
+                    child: const Text
+                    (
+                      "Pages",
+                      style: TextStyle
+                      (
+                        fontSize: 15,
+                      ),
+                    )
+                  )
+                ]
+              ), 
+            )
+          ],
+        )
+         
+        
         
 
 
