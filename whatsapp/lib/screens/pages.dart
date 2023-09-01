@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp/screens/page_1.dart';
+import 'package:whatsapp/screens/page_2.dart';
+import 'package:whatsapp/screens/page_3.dart';
 
 //Stack & Buttons
 
@@ -14,6 +16,8 @@ class pages extends StatefulWidget
 class pagesState extends State<pages> 
 {
   
+  String inkwell = " ";
+
   @override
   Widget build(BuildContext context) 
   {
@@ -35,16 +39,40 @@ class pagesState extends State<pages>
           // overflow: Overflow.visible,
           children: <Widget>
           [
+             Positioned 
+            (
+              top: 150,
+              left: 120,
+              child: IconButton
+              (
+                icon: Icon(Icons.download),
+                iconSize: 40,
+                color: Colors.black,
+                tooltip: "Download",
+                onPressed: () 
+                {
+                  Navigator.push
+                  (
+                    context,
+                    MaterialPageRoute
+                    (
+                      builder: (context) => page_3(),
+                    )
+                  );
+                },
+              )
+            ),
+
             Positioned
             (
-              top: 130,
-              left: 150,
+              top: 200,
+              left: 120,
 //elevated button
               child: ElevatedButton
               (
                 child: const Text
                 (
-                  "Text",
+                  "Page 1",
                 ),
                 onPressed: () 
                 {
@@ -60,6 +88,30 @@ class pagesState extends State<pages>
               )
               
             ),
+
+            Positioned
+            (
+              top: 250,
+              left: 120,
+              child: FloatingActionButton.extended
+              (
+                onPressed: () 
+                {
+                  Navigator.push
+                  (
+                    context,
+                    MaterialPageRoute
+                    (
+                      builder: (context) => page_2(),
+                    )
+                  );
+                },
+                icon: Icon(Icons.pageview),
+                label: Text("Forms"),
+              )
+            ),
+
+            
              
             Positioned
             (
@@ -85,7 +137,12 @@ class pagesState extends State<pages>
                   ), 
                 ],
               )
-            )
+            ),
+
+            // const Positioned
+            // (
+              
+            // )
           ],
         ),
         

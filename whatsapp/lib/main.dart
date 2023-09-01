@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'screens/pages.dart';
 
+//Scaffold & Navigator
+
 void main() 
 {
   runApp(const MyApp());
@@ -99,11 +101,6 @@ class MyHomePageState extends State<MyHomePage>
             )
           ],
         )
-         
-        
-        
-
-
       ),
 
 //drawer
