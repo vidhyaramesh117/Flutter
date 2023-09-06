@@ -19,7 +19,7 @@ class _page_2State extends State<page_2> {
 
       body: Center
       (
-        
+        child: Column(),
       ),
     );
 
