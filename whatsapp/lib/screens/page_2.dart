@@ -7,6 +7,7 @@ class page_2 extends StatefulWidget
   @override
   State<page_2> createState() => _page_2State();
 }
+enum ConfirmAction {Cancel,Accept}
 
 class _page_2State extends State<page_2> 
 {
@@ -99,187 +100,240 @@ class My_form_State extends State<My_form>
                   ),
                 ),
        
-              Row
-              (
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>
-                [
-                  Radio
-                  (
-                    value: "Male",
-                    groupValue: gender,
-                    onChanged: (value)
-                    {
-                      setState(() 
-                      {
-                        gender = value.toString();
-                      });
-                    },
-                  ),
-                  const Text("Male"),
-
-                  Radio
-                  (
-                    value: "Female",
-                    groupValue: gender,
-                    onChanged: (value)
-                    {
-                      setState(() 
-                      {
-                        gender = value.toString();
-                      });
-                    },
-                  ),
-                  const Text("Female"),
-
-                  Radio
-                  (
-                    value: "Other",
-                    groupValue: gender,
-                    onChanged: (value)
-                    {
-                      setState(() 
-                      {
-                        gender = value.toString();
-                      });
-                    },
-                  ),
-                  const Text("Other"),
-
-                ],
-              ),
-              
-            ],
-          ),
-
-          const Align
-          (
-            alignment :Alignment.centerLeft,
-            child: Padding
-            (
-              padding: EdgeInsets.only(left: 1.0),
-              child: Text
-              ( 
-                "\nCourses :",
-                style: TextStyle
+                Row
                 (
-                  fontSize: 17,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>
+                  [
+                    Radio
+                    (
+                      value: "Male",
+                      groupValue: gender,
+                      onChanged: (value)
+                      {
+                        setState(() 
+                        {
+                          gender = value.toString();
+                        });
+                      },
+                    ),
+                    const Text("Male"),
+
+                    Radio
+                    (
+                      value: "Female",
+                      groupValue: gender,
+                      onChanged: (value)
+                      {
+                        setState(() 
+                        {
+                          gender = value.toString();
+                        });
+                      },
+                    ),
+                    const Text("Female"),
+
+                    Radio
+                    (
+                      value: "Other",
+                      groupValue: gender,
+                      onChanged: (value)
+                      {
+                        setState(() 
+                        {
+                          gender = value.toString();
+                        });
+                      },
+                    ),
+                    const Text("Other"),
+
+                  ],
+                ),
+                
+              ],
+            ),
+
+            const Align
+            (
+              alignment :Alignment.centerLeft,
+              child: Padding
+              (
+                padding: EdgeInsets.only(left: 1.0),
+                child: Text
+                ( 
+                  "\nCourses :",
+                  style: TextStyle
+                  (
+                    fontSize: 17,
+                  ),
                 ),
               ),
             ),
-          ),
 
-          Column
-          (
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>
-            [
-              Row
-              (
-                children: <Widget>
-                [
-                  Checkbox
-                  (
-                    value: value_first,
-                    onChanged: (bool? value) 
-                    {  
-                      setState (() 
+            Column
+            (
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>
+              [
+                Row
+                (
+                  children: <Widget>
+                  [
+                    Checkbox
+                    (
+                      value: value_first,
+                      onChanged: (bool? value) 
                       {  
-                        value_first = value;  
-                      }
-                      );  
-                    },  
-                  ),
-                  const Text("Flutter"),
-                ]
-              ),
+                        setState (() 
+                        {  
+                          value_first = value;  
+                        }
+                        );  
+                      },  
+                    ),
+                    const Text("Flutter"),
+                  ]
+                ),
 
-              Row
-              (
-                children: <Widget>
-                [
-                  Checkbox
-                  (
-                    value: value_second,
-                    onChanged: (bool? value)
-                    {
-                      setState(() 
+                Row
+                (
+                  children: <Widget>
+                  [
+                    Checkbox
+                    (
+                      value: value_second,
+                      onChanged: (bool? value)
                       {
-                        value_second = value;
-                      }
-                      );
-                    }
-                  ),
-                  const Text("Java"),
-                ],
-              ),
-
-              Row
-              (
-                children: <Widget>
-                [
-                  Checkbox
-                  (
-                    value: value_third,
-                    onChanged: (bool? value)
-                    {
-                      setState(() 
-                      {
-                        value_third = value;
-                      }
-                      );
-                    }
-                  ),
-                  const Text("Android"),
-                ],
-              ),
-
-            ],
-          ),
-
-          Row
-          (
-            children: <Widget>
-            [
-              Column
-              (
-
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>
-                [
-                  ElevatedButton
-                  (
-                    onPressed: () 
-                    {
-                      showDialog
-                      (
-                        context: context,
-                        builder: (BuildContext context) 
+                        setState(() 
                         {
-                          return AlertDialog
+                          value_second = value;
+                        }
+                        );
+                      }
+                    ),
+                    const Text("Java"),
+                  ],
+                ),
+
+                Row
+                (
+                  children: <Widget>
+                  [
+                    Checkbox
+                    (
+                      value: value_third,
+                      onChanged: (bool? value)
+                      {
+                        setState(() 
+                        {
+                          value_third = value;
+                        }
+                        );
+                      }
+                    ),
+                    const Text("Android"),
+                  ],
+                ),
+
+              ],
+            ),
+
+            Row
+            (
+              children: <Widget>
+              [
+                Column
+                (
+
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>
+                  [
+                    ElevatedButton
+                    (
+                      onPressed: () 
+                      {
+                        showDialog
+                        (
+                          context: context,
+                          builder: (BuildContext context) 
+                          {
+                            return AlertDialog
+                            (
+                              title: const Text("Alert"),
+                              content: const Text("Do you want to submit the form"),
+                              actions: <Widget>
+                              [
+                                TextButton
+                                (
+                                  onPressed: ()
+                                  {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text("OK"),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: const Text("Submit"),
+                    ),
+                  ],
+
+                ),
+
+                Row
+                ( 
+                  children: <Widget>
+                  [
+                    
+                  Column
+                  (
+                    children: <Widget>
+                    [
+                      ElevatedButton
+                      (
+                        onPressed: ()
+                        {
+                          showDialog
                           (
-                            title: const Text("Alert"),
-                            content: const Text("Do you want to submit the form"),
-                            actions: <Widget>
-                            [
-                              TextButton
+                            context: context,
+                            builder: (BuildContext context) 
+                            {
+                              return AlertDialog
                               (
-                                onPressed: ()
-                                {
-                                  Navigator.of(context).pop();
-                                },
-                                child: Text("OK"),
-                              ),
-                            ],
+                                title: const Text("Alert"),
+                                content: const Text("Do you want to delete the form"),
+                                actions: 
+                                [
+                                  TextButton
+                                  (
+                                    onPressed: ()
+                                    {
+                                      Navigator.of(context).pop(ConfirmAction.Cancel);
+                                    },
+                                    child: const Text("Cancel"),
+                                  ),
+
+                                  TextButton
+                                  (
+                                    onPressed: ()
+                                    {
+                                      Navigator.of(context).pop(ConfirmAction.Accept);
+                                    },
+                                    child: const Text("Delete"),
+                                  )
+                                ],
+                              );
+                            },
                           );
                         },
-                      );
-                    },
-                    child: const Text("Submit"),
-                  ),
-                ],
-
-              ),
+                        child: const Text("Delete"),
+                      )
+                    ],
+                  )
+                  ]
+                )
         
             ],
           ),
